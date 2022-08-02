@@ -11,7 +11,7 @@
 }
 .poke-card{
     height: 90%;
-    width: 60%;
+    width: 80%;
     border-radius: 18px 18px 0 0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -22,8 +22,8 @@
 
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: lightgreen;
-    background-image: url('../images/icons/Pokemon_Type_Icon_Grass.svg');
+    background-color: rgb(124, 124, 124);
+    background-image: url('../images/pokeballgrayscale.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: 70%;
@@ -66,7 +66,7 @@
     align-items: center;
 }
 .card-top .poke-img img{
-    height: 50%;
+    height: 80%;
 }
 .card-bottom{
     height: 45%;
@@ -113,6 +113,6 @@
 @media (max-width: 1300px){
 
     .card-bottom .card-status ul li{
-        font-size: 19px;
+        font-size: 16px;
     }
 }

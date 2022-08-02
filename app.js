@@ -4,34 +4,37 @@ const searchButton = document.querySelector('.search-button')
 searchBox.addEventListener('keypress', SetPoke)
 searchButton.addEventListener('click', () => {
     console.log('clicou '+searchBox.value)
-    if(searchBox.value > 1){
-        GetPokeBySearch(searchBox.value)
-    }
-    return
+    GetPokeBySearch(searchBox.value)
 })
 
-
+let filter = document.querySelector('.filter')
+let region
 let pokes = []
-async function LoadPokemons(from, to, region){
-    let filter = document.querySelector('.filter')
-    filter.innerHTML = region
-    let pokess = []
-    let response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=${to+1}&offset=${from}`)
-    const data = await response.json()
-    pokess.push(data)
+async function LoadPokemons(from, to, regiontofilter){
 
-    BuildGrid(from, pokess)
+    filter.innerHTML = regiontofilter
+    region = regiontofilter
+
+    let pokess = []
+    for(let i = from ; i != to ; i++){
+        let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
+        const data = await response.json()
+        pokess.push(data)
+    }
+
+    BuildGrid(pokess)
     console.log(pokess)
     pokes = pokess
 }
 
-function BuildGrid(id, pokes){
+function BuildGrid(pokes){
     const grid = document.querySelector('.pokeList')
     grid.innerHTML = ''
-    for(let i = 0 ; i != pokes[0].results.length ; i++){
+    for(let i = 0 ; i != pokes.length ; i++){
         let mainCard = document.createElement('li')
         mainCard.classList.add('pokeMiniCard')
-        id = id + 1
+        mainCard.setAttribute('data-id', pokes[i].id)
+        mainCard.addEventListener('click', TargetClicked)
 
 
         grid.appendChild(mainCard)
@@ -40,31 +43,37 @@ function BuildGrid(id, pokes){
         let pokeNameIdSpan = document.createElement('span')
         pokeNameIdSpan.classList.add('name-id')
         mainCard.appendChild(pokeNameIdSpan)
+        pokeNameIdSpan.setAttribute('data-id', pokes[i].id)
 
 
         let poke_name = document.createElement('span')
         poke_name.classList.add('name')
         pokeNameIdSpan.appendChild(poke_name)
+        poke_name.setAttribute('data-id', pokes[i].id)
 
 
         let poke_id = document.createElement('span')
         poke_id.classList.add('id')
         pokeNameIdSpan.appendChild(poke_id)
+        poke_id.setAttribute('data-id', pokes[i].id)
 
 
 
         let pokeImgSpan = document.createElement('span')
         pokeImgSpan.classList.add('poke-img')
         mainCard.appendChild(pokeImgSpan)
+        pokeImgSpan.setAttribute('data-id', pokes[i].id)
 
 
         let pokeImg = document.createElement('img')
         pokeImg.classList.add('img')
         pokeImgSpan.appendChild(pokeImg)
+        pokeImg.setAttribute('data-id', pokes[i].id)
 
-        poke_name.innerHTML = `${pokes[0].results[i].name}`
-        poke_id.innerHTML = `#${id}`
-        pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
+
+        poke_name.innerHTML = CapitalChar(`${pokes[i].name}`)
+        poke_id.innerHTML = `#${pokes[i].id}`
+        pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokes[i].id}.png`
     }
 }
 
@@ -75,29 +84,74 @@ function SetPoke(evt){
         GetPokeBySearch(searchBox.value)
     }
 }
-function BuildMainCard(pokeTarget){
-    let pokeCardName = document.querySelector('.poke-card-name')
-    pokeCardName.innerHTML = pokeTarget.name
-
-    let pokeCardId = document.querySelector('.poke-card-id')
-    pokeCardId.innerHTML = `#${pokeTarget.id}`
-
-    let pokeCardImg = document.querySelector('.poke-card-img')
-    pokeCardImg.src = pokeTarget.sprites.other.home.front_default
+async function TargetClicked(pokeTarget){
+    let targetId = pokeTarget.target.dataset.id
+    let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${targetId}`)
+    const data = await response.json()
+    BuildMainCard(data)
 }
+
+function BuildMainCard(target){
+    //atualiza os dados do cartão principal
+    const pokeCardName = document.querySelector('.poke-card-name')
+    pokeCardName.innerHTML = CapitalChar(target.name)
+
+    const pokeCardId = document.querySelector('.poke-card-id')
+    pokeCardId.innerHTML = `#${target.id}`
+
+    const pokeCardImg = document.querySelector('.poke-card-img')
+
+    pokeCardImg.src = target.sprites.other["official-artwork"].front_default
+
+
+    //Atualiza os status do cartão principal
+    const pokeCardHp = document.querySelector('.poke-stat-hp')
+    pokeCardHp.innerHTML = 'HP: '+target.stats[0].base_stat
+
+    const pokeCardAtk = document.querySelector('.poke-stat-ataque')
+    pokeCardAtk.innerHTML = 'Ataque: '+target.stats[1].base_stat
+
+    const pokeCardDef = document.querySelector('.poke-stat-defesa')
+    pokeCardDef.innerHTML = 'Defesa: '+target.stats[2].base_stat
+
+    const pokeCardAtkSp = document.querySelector('.poke-stat-ataque-sp')
+    pokeCardAtkSp.innerHTML = 'Ataque Sp: '+target.stats[3].base_stat
+
+    const pokeCardDefSp = document.querySelector('.poke-stat-defesa-sp')
+    pokeCardDefSp.innerHTML = 'Defesa Sp: '+target.stats[4].base_stat
+
+    const pokeCardVel = document.querySelector('.poke-stat-velocidade')
+    pokeCardVel.innerHTML = 'Velocidade: '+target.stats[5].base_stat
+
+    //atualiza as habilidades do cartão principal
+    const pokeCardSkill1 = document.querySelector('.poke-stat-skill1')
+    pokeCardSkill1.innerHTML = CapitalChar(target.abilities[0].ability.name)
+
+    const pokeCardSkill2 = document.querySelector('.poke-stat-skill2')
+    pokeCardSkill1.innerHTML = CapitalChar(target.abilities[1].ability.name)
+
+}
+
 function FilterByType(type){
-    let pokePerType = []
-    for(let i=1 ; i!=pokes.length ; i++){
-        if(pokes[i].types[0].type.name == type){
-            pokePerType.push(pokes[i])
-        }else if(pokes[i].types.length > 1){
-            if(pokes[i].types[1].type.name == type){
-                pokePerType.push(pokes[i])
+    pokesByType = []
+    for(let i = 0 ; i != pokes.length ; i++){
+        if(pokes[i].types.length > 1){
+            if(pokes[i].types[0].type.name == type){
+                pokesByType.push(pokes[i])
+                console.log('filtrado')
+            } else if(pokes[i].types[1].type.name == type){
+                pokesByType.push(pokes[i])
+                console.log('filtrado');
+            }  
+        }else{
+            if(pokes[i].types[0].type.name == type){
+                pokesByType.push(pokes[i])
+                console.log('filtrado')
             }
         }
+        
     }
-    console.log(pokePerType)
-    BuildCards(pokePerType)
+    BuildGrid(pokesByType)
 }
 function GetPokeBySearch(name){
     fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
@@ -135,9 +189,13 @@ function BuildSearchedCard(poke){
     pokeImgSpan.appendChild(pokeImg)
 
 
-    poke_name.innerHTML = poke.species.name
+    poke_name.innerHTML = CapitalChar(poke.species.name)
     poke_id.innerHTML = `#${poke.id}`
-    pokeImg.src = poke.sprites.other.home.front_default
+    pokeImg.src = poke.sprites.other["official-artwork"].front_default
+}
+function CapitalChar(str){
+    const str2 = str.charAt(0).toUpperCase() + str.slice(1);
+    return str2
 }
 
 

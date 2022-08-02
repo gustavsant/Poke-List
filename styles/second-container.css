@@ -27,8 +27,9 @@
     cursor: pointer;
 }
 .second-container .inputs #pokeSearch{
-    font-size: 18px;
-    height: 48px;
+    font-size: 28px;
+    height: 64px;
+    width: 380px;
     border-radius: 24px 0 24px 0;
     padding: 5px;
     outline: none;
@@ -48,13 +49,14 @@
     color: rgba(0, 0, 0, 0.842);
     border-radius: 9px;
     background-color: white;
-    height: 200px;
+    height: 300px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 4px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: all 300ms;
+    font-size: 26px;
 }
 .second-container .pokeList li:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -71,16 +73,16 @@
     justify-content: center;
 }
 .second-container .pokeList li .poke-img img{
-    height: 140px;
-    margin-bottom: 35px;
+    height: 240px;
 }
 .second-container .pokeList li .type-icons img{
     height: 20px;
 }
 .second-container .inputs{
+    width: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 @media(max-width: 1600px){
     .second-container .pokeList{

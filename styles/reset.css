@@ -10,5 +10,6 @@ main{
     display: flex;
 }
 body{
-    background-image: url('../images/pokeballgrayscale.png');
+    background-image: url('../images/pokeballImg.png');
+    background-size: 250px;
 }
