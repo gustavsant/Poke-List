@@ -20,16 +20,18 @@ async function LoadPokemons(from, to, region){
     const data = await response.json()
     pokess.push(data)
 
-    BuildGrid(pokess)
+    BuildGrid(from, pokess)
+    console.log(pokess)
     pokes = pokess
 }
 
-function BuildGrid(pokes){
+function BuildGrid(id, pokes){
     const grid = document.querySelector('.pokeList')
     grid.innerHTML = ''
     for(let i = 0 ; i != pokes[0].results.length ; i++){
         let mainCard = document.createElement('li')
         mainCard.classList.add('pokeMiniCard')
+        id = id + 1
 
 
         grid.appendChild(mainCard)
@@ -61,8 +63,8 @@ function BuildGrid(pokes){
         pokeImgSpan.appendChild(pokeImg)
 
         poke_name.innerHTML = `${pokes[0].results[i].name}`
-        poke_id.innerHTML = `#${i+1}`
-        pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${i+1}.png`
+        poke_id.innerHTML = `#${id}`
+        pokeImg.src = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`
     }
 }
 
