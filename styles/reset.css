@@ -1,0 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+
+}
+main{
+    min-height: 100vh;
+    display: flex;
+}
+body{
+    background-image: url('../images/pokeballgrayscale.png');
+}

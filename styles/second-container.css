@@ -1,0 +1,90 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+
+.second-container{
+    background-color: #ffffffbf;
+    margin-left: 20px;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 55%;
+    height: 100vh;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.second-container .greyPokeball{
+    height: 150px;
+}
+.second-container .inputs{
+    padding: 15px 0;
+}
+.second-container .inputs h2{
+    padding-right: 5px;
+}
+.second-container .inputs .material-symbols-outlined{
+    font-size: 32px;
+    cursor: pointer;
+}
+.second-container .inputs #pokeSearch{
+    font-size: 18px;
+    height: 48px;
+    border-radius: 24px 0 24px 0;
+    padding: 5px;
+    outline: none;
+}
+.second-container .pokeList{
+    min-height: 60%;
+    max-height: 100%;
+    overflow-y: auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 12px;
+}
+.second-container .pokeList li{
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.842);
+    border-radius: 9px;
+    background-color: white;
+    height: 200px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 300ms;
+}
+.second-container .pokeList li:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+.second-container .pokeList li .name-id span{
+    display: flex;
+    justify-content: space-between;
+}
+
+.second-container .pokeList li .poke-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.second-container .pokeList li .poke-img img{
+    height: 140px;
+    margin-bottom: 35px;
+}
+.second-container .pokeList li .type-icons img{
+    height: 20px;
+}
+.second-container .inputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@media(max-width: 1600px){
+    .second-container .pokeList{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
