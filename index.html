@@ -18,7 +18,7 @@
     <script defer src="app.js"></script>
 </head>
 
-<body onload="LoadPokemons(1, 152, 'Kanto')">
+<body onload="LoadPokemons(1, 152,'')">
     <main>
         <div class="first-container">
             <header>
@@ -113,8 +113,13 @@
                     </span>
                 </div>
             </div>
-            <ul class="pokeList">
+            <div class="loader">
+                <img src="images/loader-icon.png" alt="">
+                <span>Carregando...</span>
+            </div>
+            <ul class="pokeList"> 
             </ul>
+            
         </div>
         <div class="third-container">
             <div class="poke-card">

@@ -1,5 +1,13 @@
 const searchBox = document.querySelector('#pokeSearch')
 const searchButton = document.querySelector('.search-button')
+const regionList = document.querySelector('.gen')
+const regionListItem = document.querySelectorAll('.gen-item')
+const loader = document.querySelector('.loader')
+const grid = document.querySelector('.pokeList')
+let filter = document.querySelector('.filter')
+
+let region
+let pokes = []
 
 const type_bgcolor = {
     steel: '#5A8EA1',
@@ -22,8 +30,7 @@ const type_bgcolor = {
     flying: '#94AADD'
 
 }
-const regionList = document.querySelector('.gen')
-const regionListItem = document.querySelectorAll('.gen-item')
+
 
 regionListItem.forEach(each => {
     each.addEventListener('click', () => {
@@ -43,11 +50,12 @@ searchButton.addEventListener('click', () => {
     GetPokeBySearch(searchBox.value)
 })
 
-let filter = document.querySelector('.filter')
-let region
-let pokes = []
-async function LoadPokemons(from, to, regiontofilter){
 
+
+
+async function LoadPokemons(from, to, regiontofilter){
+    loader.classList.remove('loaderHide')
+    grid.innerHTML = ''
     filter.innerHTML = regiontofilter
     region = regiontofilter
 
@@ -57,14 +65,15 @@ async function LoadPokemons(from, to, regiontofilter){
         const data = await response.json()
         pokess.push(data)
     }
-
+    loader.classList.add('loaderHide')
     BuildGrid(pokess)
     console.log(pokess)
     pokes = pokess
 }
 
 function BuildGrid(pokes){
-    const grid = document.querySelector('.pokeList')
+    
+    
     grid.innerHTML = ''
     for(let i = 0 ; i != pokes.length ; i++){
         let mainCard = document.createElement('li')

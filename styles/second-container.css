@@ -49,6 +49,7 @@
     grid-gap: 8px;
 }
 .second-container .pokeList li{
+    max-height: 245px;
     letter-spacing: 1px;
     font-weight: 600;
     color: rgba(0, 0, 0, 0.842);
@@ -79,6 +80,29 @@
 }
 .second-container .pokeList li .type-icons img{
     height: 20px;
+}
+.second-container .loader{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.second-container .loader img{
+    animation: spin 1.5s linear infinite;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    height: 100px;
+}
+.second-container .loader span{
+    font-size: 18px;
+    font-weight: 600;
+}
+.second-container .loaderHide{
+    display: none;
+}
+@keyframes spin { 
+    to {transform: rotate(360deg)}
 }
 .second-container .inputs{
     width: 50%;
