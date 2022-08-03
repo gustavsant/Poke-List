@@ -13,16 +13,17 @@
     height: 90%;
     width: 80%;
     border-radius: 18px 18px 0 0;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    
 }
 .card-top{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     padding: 20px;
     display: flex;
     height: 55%;
-
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: rgb(124, 124, 124);
+    background-color: #98e56c;
     background-image: url('../images/pokeballgrayscale.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -38,12 +39,15 @@
 }
 .poke-card-name-id .poke-card-name{
     font-weight: 900;
-    font-size: 30px;
+    font-size: 24px;
+    letter-spacing: 1px;
     color: white;
     text-shadow: 1px 1px rgba(51, 51, 51, 0.525);
 }
 .poke-card-name-id .poke-card-id{
-    font-size: 22px;
+    padding-right: 10%;
+    font-size: 32px;
+    font-weight: 600;
     color: rgb(249, 226, 226);
     text-shadow: 1px 1px rgba(51, 51, 51, 0.565);
 }
@@ -106,13 +110,17 @@
         width: 93%;
         
     }
-    .card-top .poke-img img{
-        height: 70%;
+    .card-top .poke-img img {
+        height: 90%;
     }
 }
 @media (max-width: 1300px){
 
     .card-bottom .card-status ul li{
-        font-size: 16px;
+        font-size: 17px;
     }
+    .poke-card-name-id .poke-card-id{
+        font-size: 24px;
+    }
+
 }

@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;900&display=swap');
 
 .second-container{
     background-color: #ffffffbf;
@@ -14,12 +14,13 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .second-container .greyPokeball{
-    height: 150px;
+    height: 100px;
 }
 .second-container .inputs{
     padding: 15px 0;
 }
 .second-container .inputs h2{
+
     padding-right: 5px;
 }
 .second-container .inputs .material-symbols-outlined{
@@ -29,7 +30,7 @@
 .second-container .inputs #pokeSearch{
     font-size: 28px;
     height: 64px;
-    width: 380px;
+    width: 330px;
     border-radius: 24px 0 24px 0;
     padding: 5px;
     outline: none;
@@ -83,6 +84,28 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+@media (max-width: 1300px){
+    .second-container .inputs #pokeSearch{
+        width: 200px;
+        height: 40px;
+        font-size: 19px;
+    }
+    .second-container .inputs h2{
+        font-size: 17px;
+    }
+    .second-container .pokeList li{
+        height: 190px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .second-container .pokeList li .poke-img img{
+        height: 150px;
+    }
+    .second-container h1{
+        font-size: 20px;
+    }
+    
 }
 @media(max-width: 1600px){
     .second-container .pokeList{
