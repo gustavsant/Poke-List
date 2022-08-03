@@ -1,6 +1,28 @@
 const searchBox = document.querySelector('#pokeSearch')
 const searchButton = document.querySelector('.search-button')
 
+const type_bgcolor = {
+    steel: '#D6D2C4',
+    water: '#B2C8DF',
+    dragon: '#898AA6',
+    electric: '#FFF89A',
+    fairy: '#FFB2A6',
+    ghost: '#6867AC',
+    fire: '#FF3D33',
+    ice: '#B4F2E1',
+    bug: '#CFF6CF',
+    fighting: '#E08F62',
+    normal: '#CFC5A5',
+    rock: '#CDB699',
+    grass: '#C4DFAA',
+    psychic: '#D885A3',
+    dark: '#78869b',
+    ground: '#C0A080',
+    poison: '#b9aac0',
+    flying: '#CDF0EA',
+
+}
+
 searchBox.addEventListener('keypress', SetPoke)
 searchButton.addEventListener('click', () => {
     console.log('clicou '+searchBox.value)
@@ -100,8 +122,14 @@ function BuildMainCard(target){
     pokeCardId.innerHTML = `#${target.id}`
 
     const pokeCardImg = document.querySelector('.poke-card-img')
-
     pokeCardImg.src = target.sprites.other["official-artwork"].front_default
+
+    const pokeCardTypes = document.querySelector('.poke-card-type')
+    if(target.types.length >= 2){
+        pokeCardTypes.innerHTML = `${CapitalChar(target.types[0].type.name)} / ${CapitalChar(target.types[1].type.name)}`
+    } else{
+        pokeCardTypes.innerHTML = CapitalChar(target.types[0].type.name)
+    }
 
 
     //Atualiza os status do cartão principal
@@ -115,20 +143,37 @@ function BuildMainCard(target){
     pokeCardDef.innerHTML = 'Defesa: '+target.stats[2].base_stat
 
     const pokeCardAtkSp = document.querySelector('.poke-stat-ataque-sp')
-    pokeCardAtkSp.innerHTML = 'Ataque Sp: '+target.stats[3].base_stat
+    pokeCardAtkSp.innerHTML = 'Ataque.Sp: '+target.stats[3].base_stat
 
     const pokeCardDefSp = document.querySelector('.poke-stat-defesa-sp')
-    pokeCardDefSp.innerHTML = 'Defesa Sp: '+target.stats[4].base_stat
+    pokeCardDefSp.innerHTML = 'Defesa.Sp: '+target.stats[4].base_stat
 
     const pokeCardVel = document.querySelector('.poke-stat-velocidade')
     pokeCardVel.innerHTML = 'Velocidade: '+target.stats[5].base_stat
 
-    //atualiza as habilidades do cartão principal
+    //atualiza as habilidades do cartão
     const pokeCardSkill1 = document.querySelector('.poke-stat-skill1')
-    pokeCardSkill1.innerHTML = CapitalChar(target.abilities[0].ability.name)
-
     const pokeCardSkill2 = document.querySelector('.poke-stat-skill2')
-    pokeCardSkill1.innerHTML = CapitalChar(target.abilities[1].ability.name)
+
+    if(target.abilities.length==2){
+        pokeCardSkill1.innerHTML = CapitalChar(target.abilities[0].ability.name)
+        pokeCardSkill2.innerHTML = CapitalChar(target.abilities[1].ability.name)
+    } else{
+        pokeCardSkill1.innerHTML = CapitalChar(target.abilities[0].ability.name)
+        pokeCardSkill2.innerHTML = ''
+    }
+
+
+
+    //atualiza o estilo do cartão
+    const cardTop = document.querySelector('.card-top')
+    cardTop.style.backgroundColor = type_bgcolor[target.types[0].type.name]
+    console.log(type_bgcolor[target.types[0].type.name])
+
+    cardTop.style.backgroundImage = `url(images/icons/Pokemon_Type_Icon_${CapitalChar(target.types[0].type.name)}.svg)` //images\icons\Pokemon_Type_Icon_Bug.svg
+
+    // background-color: #98e56c;
+    // background-image: url('../images/pokeballgrayscale.png');
 
 }
 
@@ -165,28 +210,35 @@ function BuildSearchedCard(poke){
     const grid = document.querySelector('.pokeList')
 
     let mainCard = document.createElement('li')
+    mainCard.setAttribute('data-id', poke.id)
+    mainCard.addEventListener('click', TargetClicked)
     grid.appendChild(mainCard)
 
     let pokeNameIdSpan = document.createElement('span')
     pokeNameIdSpan.classList.add('name-id')
     mainCard.appendChild(pokeNameIdSpan)
+    pokeNameIdSpan.setAttribute('data-id', poke.id)
 
     let poke_name = document.createElement('span')
     poke_name.classList.add('name')
     pokeNameIdSpan.appendChild(poke_name)
+    poke_name.setAttribute('data-id', poke.id)
 
     let poke_id = document.createElement('span')
     poke_id.classList.add('id')
     pokeNameIdSpan.appendChild(poke_id)
+    poke_id.setAttribute('data-id', poke.id)
 
 
     let pokeImgSpan = document.createElement('span')
     pokeImgSpan.classList.add('poke-img')
     mainCard.appendChild(pokeImgSpan)
+    pokeImgSpan.setAttribute('data-id', poke.id)
 
     let pokeImg = document.createElement('img')
     pokeImg.classList.add('img')
     pokeImgSpan.appendChild(pokeImg)
+    pokeImg.setAttribute('data-id', poke.id)
 
 
     poke_name.innerHTML = CapitalChar(poke.species.name)
