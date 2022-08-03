@@ -18,7 +18,7 @@
     <script defer src="app.js"></script>
 </head>
 
-<body>
+<body onload="LoadPokemons(1, 152, 'Kanto')">
     <main>
         <div class="first-container">
             <header>
@@ -26,35 +26,35 @@
                 <h2>Região</h2>
             </header>
             <ul class="gens">
-                <li style="background-image: url('/images/defaults/kanto-defaults.jpg');" id="Kanto"
+                <li class="gen-item active" style="background-image: url('images/defaults/kanto-iniciais.png');" id="Kanto"
                     onclick="LoadPokemons(1, 152, this.id)">
                     <span>Kanto</span>
                 </li>
-                <li style="background-image: url('/images/defaults/johto-defaults.jpg')" id="Johto"
+                <li class="gen-item" style="background-image: url('images/defaults/johto-iniciais.png')" id="Johto"
                     onclick="LoadPokemons(152, 252, this.id)">
                     <span>Johto</span>
                 </li>
-                <li style="background-image: url('/images/defaults/hoenn-defaults\ \(1\).png');" id="Hoenn"
+                <li class="gen-item" style="background-image: url('images/defaults/hoenn-iniciais.png');" id="Hoenn"
                     onclick="LoadPokemons(252, 387, this.id)">
                     <span>Hoenn</span>
                 </li>
-                <li style="background-image: url('/images/defaults/sinnoh-defaults.jpg');" id="Sinnoh"
+                <li class="gen-item" style="background-image: url('images/defaults/sinnoh-iniciais.png');" id="Sinnoh"
                     onclick="LoadPokemons(387, 494, this.id)">
                     <span>Sinnoh</span>
                 </li>
-                <li style="background-image: url('/images/defaults/unova-defaults.jpg');" id="Unova"
+                <li class="gen-item" style="background-image: url('images/defaults/unova-iniciais.png');" id="Unova"
                     onclick="LoadPokemons(494, 650, this.id)">
                     <span>Unova</span>
                 </li>
-                <li style="background-image: url('/images/defaults/kalos-defaults.jpg');" id="Kalos"
+                <li class="gen-item"  style="background-image: url('images/defaults/kalos-iniciais.png');" id="Kalos"
                     onclick="LoadPokemons(650, 722, this.id)">
                     <span>Kalos</span>
                 </li>
-                <li style="background-image: url('/images/defaults/alola-defaults.png');" id="Alola"
+                <li class="gen-item" style="background-image: url('images/defaults/alola-iniciais.png');" id="Alola"
                     onclick="LoadPokemons(722, 810, this.id)">
                     <span>Alola</span>
                 </li>
-                <li style="background-image: url('/images/defaults/galar-defaults.webp');" id="Galar"
+                <li class="gen-item" style="background-image: url('images/defaults/Galar-iniciais.png');" id="Galar"
                     onclick="LoadPokemons(810, 899, this.id)">
                     <span>Galar</span>
                 </li>
@@ -64,56 +64,54 @@
                     <img src="images/pokeballImg.png" alt="">
                     <h2>Tipos</h2>
                 </div>
-                <li onclick="FilterByType('water')" style="background-color: #B2C8DF;">Água <img
+                <li onclick="FilterByType('water')" style="background-color: #4D90D5;">Água <img
                         src="images/icons/Pokemon_Type_Icon_Water.svg" alt=""></li>
-                <li onclick="FilterByType('fire', )" style="background-color: #E5CB9F;">Fogo <img
+                <li onclick="FilterByType('fire', )" style="background-color: #FF9C54;">Fogo <img
                         src="images/icons/Pokemon_Type_Icon_Fire.svg" alt=""></li>
-                <li onclick="FilterByType('grass')" style="background-color: #C4DFAA;">Planta <img
+                <li onclick="FilterByType('grass')" style="background-color: #61BC57;">Planta <img
                         src="images/icons/Pokemon_Type_Icon_Grass.svg" alt=""></li>
-                <li onclick="FilterByType('electric')" style="background-color: #FAF4B7;">Elétrico <img
+                <li onclick="FilterByType('electric')" style="background-color: #F3D23B;">Elétrico <img
                         src="images/icons/Pokemon_Type_Icon_Electric.svg" alt=""></li>
-                <li onclick="FilterByType('poison')" style="background-color: #b9aac0;">Veneno <img
+                <li onclick="FilterByType('poison')" style="background-color: #AE68C9;">Veneno <img
                         src="images/icons/Pokemon_Type_Icon_Poison.svg" alt=""></li>
-                <li onclick="FilterByType('normal')" style="background-color: #C1C4C7;">Normal <img
+                <li onclick="FilterByType('normal')" style="background-color: #9099A1;">Normal <img
                         src="images/icons/Pokemon_Type_Icon_Normal.svg" alt=""></li>
-                <li onclick="FilterByType('flying')" style="background-color: #CDF0EA;">Voador <img
+                <li onclick="FilterByType('flying')" style="background-color: #94AADD;">Voador <img
                         src="images/icons/Pokemon_Type_Icon_Flying.svg" alt=""></li>
-                <li onclick="FilterByType('ice')" style="background-color: #8CC0DE;">Gelo <img
+                <li onclick="FilterByType('ice')" style="background-color: #74CEC0;">Gelo <img
                         src="images/icons/Pokemon_Type_Icon_Ice.svg" alt=""></li>
-                <li onclick="FilterByType('bug')" style="background-color: #92BA92;">Inseto <img
+                <li onclick="FilterByType('bug')" style="background-color: #91BF2C;">Inseto <img
                         src="images/icons/Pokemon_Type_Icon_Bug.svg" alt=""></li>
-                <li onclick="FilterByType('fighting')" style="background-color: #F3DBDF;">Lutador <img
+                <li onclick="FilterByType('fighting')" style="background-color: #CE4069;">Lutador <img
                         src="images/icons/Pokemon_Type_Icon_Fighting.svg" alt=""></li>
-                <li onclick="FilterByType('ground')" style="background-color: #C0A080;">Terrestre <img
+                <li onclick="FilterByType('ground')" style="background-color: #DA7648;">Terrestre <img
                         src="images/icons/Pokemon_Type_Icon_Ground.svg" alt=""></li>
-                <li onclick="FilterByType('rock')" style="background-color: #CDB699;">Pedra <img
+                <li onclick="FilterByType('rock')" style="background-color: #C7B78B;">Pedra <img
                         src="images/icons/Pokemon_Type_Icon_Rock.svg" alt=""></li>
-                <li onclick="FilterByType('dragon')" style="background-color: #69a8c7;">Dragão <img
+                <li onclick="FilterByType('dragon')" style="background-color: #096DC4;">Dragão <img
                         src="images/icons/Pokemon_Type_Icon_Dragon.svg" alt=""></li>
-                <li onclick="FilterByType('psychic')" style="background-color: #D885A3;">Psíquico <img
+                <li onclick="FilterByType('psychic')" style="background-color: #F77076;">Psíquico <img
                         src="images/icons/Pokemon_Type_Icon_Psychic.svg" alt=""></li>
-                <li onclick="FilterByType('dark')" style="background-color: #78869b;">Sombrio <img
+                <li onclick="FilterByType('dark')" style="background-color: #5B5464;">Sombrio <img
                         src="images/icons/Pokemon_Type_Icon_Dark.svg" alt=""></li>
-                <li onclick="FilterByType('ghost')" style="background-color: #C9BBCF;">Fantasma <img
+                <li onclick="FilterByType('ghost')" style="background-color: #5269AC;">Fantasma <img
                         src="images/icons/Pokemon_Type_Icon_Ghost.svg" alt=""></li>
-                <li onclick="FilterByType('fairy')" style="background-color: #FFBCD1;">Fada <img
+                <li onclick="FilterByType('fairy')" style="background-color: #F194F2;">Fada <img
                         src="images/icons/Pokemon_Type_Icon_Fairy.svg" alt=""></li>
-                <li onclick="FilterByType('steel')" style="background-color: #D1D1D1;">Aço <img
+                <li onclick="FilterByType('steel')" style="background-color: #5A8EA1;">Aço <img
                         src="images/icons/Pokemon_Type_Icon_Steel.svg" alt=""></li>
             </ul>
         </div>
         <div class="second-container">
             <img src="images/pikachu.png" alt="" class="greyPokeball">
-            <h1>PokéList</h1>
-
+            <h2>PokéList</h2>
             <div class="inputs">
-                <h2 class="filter">Todos</h2>
+                <h2 class="filter"></h2>
                 <div class="input"><input type="text" id="pokeSearch" minlength="1" placeholder="ex: Mewtwo or 150">
                     <span class="material-symbols-outlined search-button">
                         search
                     </span>
                 </div>
-
             </div>
             <ul class="pokeList">
             </ul>

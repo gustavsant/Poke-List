@@ -10,6 +10,6 @@ main{
     display: flex;
 }
 body{
-    background-image: url('../images/pokeballImg.png');
-    background-size: 250px;
+    background-image: url('https://images7.alphacoders.com/592/592678.jpg');
+    background-size: cover;
 }

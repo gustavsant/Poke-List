@@ -2,26 +2,40 @@ const searchBox = document.querySelector('#pokeSearch')
 const searchButton = document.querySelector('.search-button')
 
 const type_bgcolor = {
-    steel: '#D6D2C4',
-    water: '#B2C8DF',
-    dragon: '#898AA6',
-    electric: '#FFF89A',
-    fairy: '#FFB2A6',
-    ghost: '#6867AC',
-    fire: '#FF3D33',
-    ice: '#B4F2E1',
-    bug: '#CFF6CF',
-    fighting: '#E08F62',
-    normal: '#CFC5A5',
-    rock: '#CDB699',
-    grass: '#C4DFAA',
-    psychic: '#D885A3',
-    dark: '#78869b',
-    ground: '#C0A080',
-    poison: '#b9aac0',
-    flying: '#CDF0EA',
+    steel: '#5A8EA1',
+    water: '#4D90D5',
+    dragon: '#096DC4',
+    electric: '#F3D23B',
+    fairy: '#F194F2',
+    ghost: '#5269AC',
+    fire: '#FF9C54',
+    ice: '#74CEC0',
+    bug: '#91BF2C',
+    fighting: '#CE4069',
+    normal: '#9099A1',
+    rock: '#C7B78B',
+    grass: '#61BC57',
+    psychic: '#F77076',
+    dark: '#5B5464',
+    ground: '#DA7648',
+    poison: '#AE68C9',
+    flying: '#94AADD'
 
 }
+const regionList = document.querySelector('.gen')
+const regionListItem = document.querySelectorAll('.gen-item')
+
+regionListItem.forEach(each => {
+    each.addEventListener('click', () => {
+        let openedRegion = document.querySelector('.active')
+        openedRegion.classList.remove('active')
+
+        let regionSelected = each.attributes.id.value
+
+        let regionToOpen = document.getElementById(regionSelected)
+        regionToOpen.classList.add('active')
+    })
+})
 
 searchBox.addEventListener('keypress', SetPoke)
 searchButton.addEventListener('click', () => {
