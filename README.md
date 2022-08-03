@@ -4,6 +4,7 @@ Site desenvolvido por mim, utilizando HTML, CSS e JavaScript, a fim de estudar e
 
 Nele você pode vizualizar todos os pokémons da região que selecionar, e ainda filtrar por tipo, clicando em algum Pokémon as informações e status do mesmo aparecerão no card maior
 
-<img align="center" src="images/gifs/gif-apresentacao"></img>
+
+![gif-apresentacao](https://user-images.githubusercontent.com/95528216/182716590-ec2a4a90-47da-4a04-a055-e051f57505d9.gif)
 
 
