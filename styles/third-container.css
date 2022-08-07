@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;900&display=swap');
+
 .third-container{
     font-family: 'Montserrat', sans-serif;
     font-size: 24px;
@@ -8,6 +9,7 @@
     align-items: center;
     height: 100vh;
     width: 47%;
+    
 }
 .poke-card{
     height: 90%;
@@ -106,6 +108,13 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.309);
     text-align: center;
     font-weight: 600;
+}
+
+@media (max-width: 425px){
+    .third-container{
+        width: 100%;
+        grid-row: 2;
+    }
 }
 
 @media (max-width: 1400px){

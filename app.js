@@ -1,6 +1,7 @@
 const searchBox = document.querySelector('#pokeSearch')
 const searchButton = document.querySelector('.search-button')
 const regionList = document.querySelector('.gen')
+const typesList = document.querySelector('.types')
 const regionListItem = document.querySelectorAll('.gen-item')
 const loader = document.querySelector('.loader')
 const grid = document.querySelector('.pokeList')
@@ -8,6 +9,8 @@ let filter = document.querySelector('.filter')
 
 let region
 let pokes = []
+
+
 
 const type_bgcolor = {
     steel: '#5A8EA1',

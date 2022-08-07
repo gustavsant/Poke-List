@@ -2,7 +2,9 @@ main{
     min-height: 100vh;
     display: flex;
 }
-
+.hidden{
+    display: none;
+}
 .first-container{
     font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
@@ -15,6 +17,7 @@ main{
     max-width: 320px;
     height: 100vh;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    animation: fadein 1s ease forwards;
 }
 .first-container header{
     display: flex;
@@ -117,7 +120,14 @@ main{
     text-align: center;
     grid-column: 1/-1;
 }
-
+@keyframes fadein {
+    from{
+        height: 0;
+    }
+    to{
+        height: 100%;
+    }
+}
 @media (max-width: 1300px){
     .first-container .types li{
         font-size: 14px;
@@ -134,6 +144,7 @@ main{
 
 @media (max-width: 1650px){
     .first-container .types{
+        max-height: 275px;
         grid-template-columns: 1fr 1fr;
     }
     .first-container .types li{
@@ -141,13 +152,15 @@ main{
     }
     .first-container .gens{
         grid-template-columns: 1fr 1fr;
-        max-height: 50%;
+        max-height: 300px;
         overflow-y: auto;
     }
 }
 @media (max-width: 425px){
     main{
-        display: block;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
     }
     .first-container{
         width: 100%;
