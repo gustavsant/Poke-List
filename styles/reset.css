@@ -5,11 +5,9 @@
     list-style-type: none;
 
 }
-main{
-    min-height: 100vh;
-    display: flex;
-}
+
 body{
+    overflow-x: hidden;
     background-image: url('https://images7.alphacoders.com/592/592678.jpg');
     background-size: cover;
 }

@@ -110,6 +110,12 @@
     align-items: center;
     justify-content: space-around;
 }
+@media (max-width: 425px){
+    .second-container{
+        width: 100%;
+        margin: 0;
+    }
+}
 @media (max-width: 1300px){
     .second-container .inputs #pokeSearch{
         width: 200px;
