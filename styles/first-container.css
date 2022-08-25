@@ -1,186 +1,121 @@
-main{
-    min-height: 100vh;
-    display: flex;
+main {
+  min-height: 100vh;
+  display: flex;
 }
-.hidden{
-    display: none;
+.hidden {
+  display: none;
 }
-.first-container{
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    background-color: #ffffffbf;
-    min-width: 280px;
-    width: 30%;
-    max-width: 320px;
-    height: 100vh;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    animation: fadein 1s ease forwards;
+.first-container {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  background-color: #ffffffbf;
+  min-width: 280px;
+  width: 30%;
+  max-width: 320px;
+  height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.first-container header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.first-container header img{
-    height: 50px;
-    padding-right: 5px;
-}
-.first-container .gens{
-    display: grid;
-    width: 100%;
-
-    height: 80%;
-    overflow-y: auto;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 7px;
-    margin-bottom: 10px;
-
-}
-.first-container .gens .gen-item{
-    background-color: white;
-    filter: grayscale(1);
-    height: 100px;
-    color: white;
-    font-size: 20px;
-    font-weight: 900;
-    cursor: pointer;
-    display: flex;
-    justify-content: end;
-    transition: all 300ms;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 8px;
-}
-.first-container .gens .active{
-    border: 2px solid rgba(51, 51, 51, 0.483);
-    filter: none;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.first-container .gens li:hover{
-    filter: none;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.gens li span{
-    height: 25px;
-    width: 100%;
-    background-color: #f7f5f5;
-    padding: 3px;
-    border-radius: 3px;
-    font-size: 15px;
-    color: black;
+.first-container header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.first-container .types{
-    grid-gap: 2px 0;
-    padding: 10px;
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 3px;
-    overflow-y: auto;
+.first-container header img {
+  height: 50px;
+  padding-right: 5px;
+}
+.first-container .gens {
+  display: grid;
+  width: 100%;
+
+  height: 80%;
+  overflow-y: auto;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 7px;
+  margin-bottom: 10px;
+}
+.first-container .gens .gen-item {
+  background-color: white;
+  filter: grayscale(1);
+  height: 100px;
+  color: white;
+  font-size: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  justify-content: end;
+  transition: all 300ms;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+}
+.first-container .gens .active {
+  border: 2px solid rgba(51, 51, 51, 0.483);
+  filter: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.first-container .gens li:hover {
+  filter: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.gens li span {
+  height: 25px;
+  width: 100%;
+  background-color: #f7f5f5;
+  padding: 3px;
+  border-radius: 3px;
+  font-size: 15px;
+  color: black;
 }
 
-.first-container .types .typesTitle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.first-container .types .typesTitle img{
-    height: 30px;
-    padding-right: 5px;
-}
-.first-container .types li img{
-    height: 30px;
-    padding-left: 5px;
-}
-.first-container .types li{
-    border-radius: 8px;
-    color: black;
-    height: 50px;
-    opacity: 0.8;
-    cursor: pointer;
-    justify-content: space-around;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    transition: all 300ms;
-    font-size: 17px;
-}
-.first-container .types li:hover{
-    font-size: 18px;
-    opacity: 1;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-.first-container .types .typesTitle{
-    text-align: center;
-    grid-column: 1/-1;
-}
-@keyframes fadein {
-    from{
-        height: 0;
-    }
-    to{
-        height: 100%;
-    }
-}
-@media (max-width: 1300px){
-    .first-container .types li{
-        font-size: 14px;
-        height: 30px;
-    }
-    .first-container .types li:hover{
-        font-size: 15px;
-    }
-    .first-container .gens{
-        grid-template-columns: 1fr;
-        grid-gap: 7px;
-    }
+.first-container .types {
+  grid-gap: 2px 0;
+  padding: 10px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3px;
+  overflow-y: auto;
 }
 
-@media (max-width: 1650px){
-    .first-container .types{
-        max-height: 275px;
-        grid-template-columns: 1fr 1fr;
-    }
-    .first-container .types li{
-        padding: 20px 0;
-    }
-    .first-container .gens{
-        grid-template-columns: 1fr 1fr;
-        max-height: 300px;
-        overflow-y: auto;
-    }
+.first-container .types .typesTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-@media (max-width: 425px){
-    main{
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-    }
-    .first-container{
-        width: 100%;
-        max-width: 425px;
-    }
-    .first-container .gens{
-        grid-template-columns: 1fr 1fr;
-    }
-    .first-container .types{
-        grid-template-columns: 1fr 1fr 1fr;
-        
-    }
-    .first-container .types li{
-        height: 70px;
-        font-size: 19px;
-        padding: 0;
-    }
-    .first-container .types li img{
-        height: 40px;
-    }
+.first-container .types .typesTitle img {
+  height: 30px;
+  padding-right: 5px;
 }
-
+.first-container .types li img {
+  height: 30px;
+  padding-left: 5px;
+}
+.first-container .types li {
+  border-radius: 8px;
+  color: black;
+  height: 50px;
+  opacity: 0.8;
+  cursor: pointer;
+  justify-content: space-around;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  transition: all 300ms;
+  font-size: 17px;
+}
+.first-container .types li:hover {
+  font-size: 18px;
+  opacity: 1;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.first-container .types .typesTitle {
+  text-align: center;
+  grid-column: 1/-1;
+}
 

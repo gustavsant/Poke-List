@@ -1,0 +1,52 @@
+@media (max-width: 430px) {
+  main {
+    overflow: hidden;
+    display: flex;
+    gap: 0 500px;
+  }
+
+
+  main .first-container{
+    min-width: 100%;
+
+  }
+
+
+
+
+
+
+  main .second-container{
+    margin-left: 0px;
+    width: 100%;
+
+
+
+
+  }
+  main .second-container .pokeList{
+    grid-template-columns: 1fr 1fr;
+  } 
+
+
+
+
+  main .third-container {
+    width: 100%;
+  }
+
+  main .third-container .poke-card{
+    margin-top: -70px;
+    height: 90%;
+    width: 90%;
+  }
+  main .third-container li {
+    font-size: 18px;
+  }
+  main .third-container .poke-card .card-bottom .card-status ul li{
+    font-size: 18px;
+  }
+  body .menu-mobile{
+    visibility: visible;
+  }
+}

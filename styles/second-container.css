@@ -110,37 +110,3 @@
     align-items: center;
     justify-content: space-around;
 }
-@media (max-width: 425px){
-    .second-container{
-        width: 100%;
-        margin: 0;
-    }
-}
-@media (max-width: 1300px){
-    .second-container .inputs #pokeSearch{
-        width: 200px;
-        height: 40px;
-        font-size: 19px;
-    }
-    .second-container .inputs h2{
-        font-size: 17px;
-    }
-    .second-container .pokeList li{
-        height: 190px;
-        font-size: 16px;
-        font-weight: 400;
-    }
-    .second-container .pokeList li .poke-img img{
-        height: 150px;
-    }
-    .second-container h1{
-        font-size: 20px;
-    }
-    
-}
-@media(max-width: 1600px){
-    .second-container .pokeList{
-        grid-template-columns: 1fr 1fr;
-    }
-}
-

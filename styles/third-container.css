@@ -109,32 +109,3 @@
     text-align: center;
     font-weight: 600;
 }
-
-@media (max-width: 425px){
-    .third-container{
-        width: 100%;
-        grid-row: 2;
-    }
-}
-
-@media (max-width: 1400px){
-
-    .card-bottom .card-status ul li{
-        font-size: 17px;
-    }
-    .poke-card-name-id .poke-card-id{
-        font-size: 24px;
-    }
-
-}
-
-
-@media (max-width: 1600px){
-    .poke-card{
-        width: 93%;
-        
-    }
-    .card-top .poke-img img {
-        height: 90%;
-    }
-}

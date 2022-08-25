@@ -7,7 +7,7 @@
 }
 
 body{
-    overflow-x: hidden;
+    position: relative;
     background-image: url('https://images7.alphacoders.com/592/592678.jpg');
     background-size: cover;
 }
