@@ -1,6 +1,9 @@
-<h1 align="center"> Global Pokedex </h1>
+<h1 align="center"> Poké-List </h1> 
 
-Site desenvolvido por mim, utilizando HTML, CSS e JavaScript, a fim de estudar e me aprofundar em ferramentas e apresentação  de API.
+<a href="https://gustavsant.github.io/Poke-List/" >Dê uma olhada!</a>
+
+Site desenvolvido por mim, utilizando HTML, CSS e JavaScript, a fim de estudar e me aprofundar em ferramentas e apresentação  de API, sendo essa uma das ferramentas mais importantes para um dev Front End, pois trata o consumo de data vindo de um banco de dados.
+<hr/>
 
 Nele você pode vizualizar todos os pokémons da região que selecionar, e ainda filtrar por tipo, clicando em algum Pokémon as informações e status do mesmo aparecerão no card maior
 
