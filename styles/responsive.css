@@ -4,11 +4,9 @@
     display: flex;
     gap: 0 500px;
   }
-
   main .first-container {
     min-width: 100%;
   }
-
   main .second-container {
     margin-left: 0px;
     width: 100%;
@@ -16,18 +14,15 @@
   main .second-container .pokeList {
     grid-template-columns: 1fr 1fr;
   }
-  main .second-container .pokeList li{
+  main .second-container .pokeList li {
     width: 164px;
   }
-
-  .second-container .pokeList li .poke-img img{
+  .second-container .pokeList li .poke-img img {
     height: 125px;
   }
-
   main .third-container {
     width: 100%;
   }
-
   main .third-container .poke-card {
     margin-top: -70px;
     height: 90%;
