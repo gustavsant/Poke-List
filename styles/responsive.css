@@ -44,7 +44,11 @@
     font-size: 18px;
   }
   main .third-container .poke-card .card-bottom .card-status ul li{
-    font-size: 18px;
+    font-size: 15px;
+  }
+  main .third-container .poke-card .card-bottom .card-status ul h4{
+    font-size: 20px;
+    margin-bottom: 10px;
   }
   body .menu-mobile{
     visibility: visible;
