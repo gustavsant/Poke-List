@@ -5,37 +5,30 @@
     gap: 0 500px;
   }
 
-
-  main .first-container{
+  main .first-container {
     min-width: 100%;
-
   }
 
-
-
-
-
-
-  main .second-container{
+  main .second-container {
     margin-left: 0px;
     width: 100%;
-
-
-
-
   }
-  main .second-container .pokeList{
+  main .second-container .pokeList {
     grid-template-columns: 1fr 1fr;
-  } 
+  }
+  main .second-container .pokeList li{
+    width: 164px;
+  }
 
-
-
+  .second-container .pokeList li .poke-img img{
+    height: 125px;
+  }
 
   main .third-container {
     width: 100%;
   }
 
-  main .third-container .poke-card{
+  main .third-container .poke-card {
     margin-top: -70px;
     height: 90%;
     width: 90%;
@@ -43,14 +36,14 @@
   main .third-container li {
     font-size: 18px;
   }
-  main .third-container .poke-card .card-bottom .card-status ul li{
+  main .third-container .poke-card .card-bottom .card-status ul li {
     font-size: 15px;
   }
-  main .third-container .poke-card .card-bottom .card-status ul h4{
+  main .third-container .poke-card .card-bottom .card-status ul h4 {
     font-size: 20px;
     margin-bottom: 10px;
   }
-  body .menu-mobile{
+  body .menu-mobile {
     visibility: visible;
   }
 }
