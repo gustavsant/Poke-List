@@ -42,3 +42,8 @@
     visibility: visible;
   }
 }
+@media(max-width: 1600px){
+    .second-container .pokeList{
+        grid-template-columns: 1fr 1fr;
+    }
+}
